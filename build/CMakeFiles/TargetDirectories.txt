@@ -1,0 +1,3 @@
+C:/Users/marcs/Desktop/gameengine/build/CMakeFiles/MyRPGEngine.dir
+C:/Users/marcs/Desktop/gameengine/build/CMakeFiles/edit_cache.dir
+C:/Users/marcs/Desktop/gameengine/build/CMakeFiles/rebuild_cache.dir

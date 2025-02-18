@@ -1,0 +1,3 @@
+"C:\Program Files\CMake\bin\cmake.exe" -E rm -f CMakeFiles\MyRPGEngine.dir/objects.a
+C:\msys64\ucrt64\bin\ar.exe qc CMakeFiles\MyRPGEngine.dir/objects.a @CMakeFiles\MyRPGEngine.dir\objects1.rsp
+C:\msys64\ucrt64\bin\g++.exe -g -Wl,--whole-archive CMakeFiles\MyRPGEngine.dir/objects.a -Wl,--no-whole-archive -o MyRPGEngine.exe -Wl,--out-implib,libMyRPGEngine.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\MyRPGEngine.dir\linkLibs.rsp

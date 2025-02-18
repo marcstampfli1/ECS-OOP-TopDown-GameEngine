@@ -1,0 +1,38 @@
+[
+{
+  "directory": "C:/Users/marcs/Desktop/gameengine/build",
+  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe  @CMakeFiles/MyRPGEngine.dir/includes_CXX.rsp -g -std=gnu++23 -o CMakeFiles\\MyRPGEngine.dir\\src\\main.cpp.obj -c C:\\Users\\marcs\\Desktop\\gameengine\\src\\main.cpp",
+  "file": "C:/Users/marcs/Desktop/gameengine/src/main.cpp",
+  "output": "CMakeFiles/MyRPGEngine.dir/src/main.cpp.obj"
+},
+{
+  "directory": "C:/Users/marcs/Desktop/gameengine/build",
+  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe  @CMakeFiles/MyRPGEngine.dir/includes_CXX.rsp -g -std=gnu++23 -o CMakeFiles\\MyRPGEngine.dir\\src\\Behaviours.cpp.obj -c C:\\Users\\marcs\\Desktop\\gameengine\\src\\Behaviours.cpp",
+  "file": "C:/Users/marcs/Desktop/gameengine/src/Behaviours.cpp",
+  "output": "CMakeFiles/MyRPGEngine.dir/src/Behaviours.cpp.obj"
+},
+{
+  "directory": "C:/Users/marcs/Desktop/gameengine/build",
+  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe  @CMakeFiles/MyRPGEngine.dir/includes_CXX.rsp -g -std=gnu++23 -o CMakeFiles\\MyRPGEngine.dir\\src\\Component.cpp.obj -c C:\\Users\\marcs\\Desktop\\gameengine\\src\\Component.cpp",
+  "file": "C:/Users/marcs/Desktop/gameengine/src/Component.cpp",
+  "output": "CMakeFiles/MyRPGEngine.dir/src/Component.cpp.obj"
+},
+{
+  "directory": "C:/Users/marcs/Desktop/gameengine/build",
+  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe  @CMakeFiles/MyRPGEngine.dir/includes_CXX.rsp -g -std=gnu++23 -o CMakeFiles\\MyRPGEngine.dir\\src\\Entity.cpp.obj -c C:\\Users\\marcs\\Desktop\\gameengine\\src\\Entity.cpp",
+  "file": "C:/Users/marcs/Desktop/gameengine/src/Entity.cpp",
+  "output": "CMakeFiles/MyRPGEngine.dir/src/Entity.cpp.obj"
+},
+{
+  "directory": "C:/Users/marcs/Desktop/gameengine/build",
+  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe  @CMakeFiles/MyRPGEngine.dir/includes_CXX.rsp -g -std=gnu++23 -o CMakeFiles\\MyRPGEngine.dir\\src\\Render.cpp.obj -c C:\\Users\\marcs\\Desktop\\gameengine\\src\\Render.cpp",
+  "file": "C:/Users/marcs/Desktop/gameengine/src/Render.cpp",
+  "output": "CMakeFiles/MyRPGEngine.dir/src/Render.cpp.obj"
+},
+{
+  "directory": "C:/Users/marcs/Desktop/gameengine/build",
+  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe  @CMakeFiles/MyRPGEngine.dir/includes_CXX.rsp -g -std=gnu++23 -o CMakeFiles\\MyRPGEngine.dir\\src\\Systems.cpp.obj -c C:\\Users\\marcs\\Desktop\\gameengine\\src\\Systems.cpp",
+  "file": "C:/Users/marcs/Desktop/gameengine/src/Systems.cpp",
+  "output": "CMakeFiles/MyRPGEngine.dir/src/Systems.cpp.obj"
+}
+]
