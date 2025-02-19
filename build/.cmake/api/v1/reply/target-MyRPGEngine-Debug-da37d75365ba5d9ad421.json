@@ -72,19 +72,19 @@
 			[
 				{
 					"backtrace" : 4,
-					"path" : "C:/Users/ur2ba/OneDrive/Desktop/ECS-OOP-TopDown-GameEngine/src/headers"
+					"path" : "C:/Users/marcs/Desktop/gameengine/src/headers"
 				},
 				{
 					"backtrace" : 5,
-					"path" : "C:/Users/ur2ba/OneDrive/Desktop/ECS-OOP-TopDown-GameEngine/graphicslib/src"
+					"path" : "C:/Users/marcs/Desktop/gameengine/graphicslib/src"
 				},
 				{
 					"backtrace" : 5,
-					"path" : "C:/Users/ur2ba/OneDrive/Desktop/ECS-OOP-TopDown-GameEngine/graphicslib/libraries/include"
+					"path" : "C:/Users/marcs/Desktop/gameengine/graphicslib/libraries/include"
 				},
 				{
 					"backtrace" : 5,
-					"path" : "C:/Users/ur2ba/OneDrive/Desktop/ECS-OOP-TopDown-GameEngine/graphicslib/shaders"
+					"path" : "C:/Users/marcs/Desktop/gameengine/graphicslib/shaders"
 				}
 			],
 			"language" : "CXX",
@@ -123,17 +123,17 @@
 			},
 			{
 				"backtrace" : 2,
-				"fragment" : "C:\\Users\\ur2ba\\OneDrive\\Desktop\\ECS-OOP-TopDown-GameEngine\\graphicslib\\build\\libgraphicslib.a",
+				"fragment" : "C:\\Users\\marcs\\Desktop\\gameengine\\graphicslib\\build\\libgraphicslib.a",
 				"role" : "libraries"
 			},
 			{
 				"backtrace" : 2,
-				"fragment" : "C:\\Users\\ur2ba\\OneDrive\\Desktop\\ECS-OOP-TopDown-GameEngine\\graphicslib\\libraries\\lib\\libglfw3.a",
+				"fragment" : "C:\\Users\\marcs\\Desktop\\gameengine\\graphicslib\\libraries\\lib\\libglfw3.a",
 				"role" : "libraries"
 			},
 			{
 				"backtrace" : 2,
-				"fragment" : "C:\\Users\\ur2ba\\OneDrive\\Desktop\\ECS-OOP-TopDown-GameEngine\\graphicslib\\libraries\\lib\\libglad.a",
+				"fragment" : "C:\\Users\\marcs\\Desktop\\gameengine\\graphicslib\\libraries\\lib\\libglad.a",
 				"role" : "libraries"
 			},
 			{

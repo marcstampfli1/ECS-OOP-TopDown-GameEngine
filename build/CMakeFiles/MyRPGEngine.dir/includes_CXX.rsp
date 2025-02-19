@@ -1,1 +1,1 @@
--I"C:/Users/ur2ba/OneDrive/Desktop/ECS-OOP-TopDown-GameEngine/src/headers" -I"C:/Users/ur2ba/OneDrive/Desktop/ECS-OOP-TopDown-GameEngine/graphicslib/src" -I"C:/Users/ur2ba/OneDrive/Desktop/ECS-OOP-TopDown-GameEngine/graphicslib/libraries/include" -I"C:/Users/ur2ba/OneDrive/Desktop/ECS-OOP-TopDown-GameEngine/graphicslib/shaders"
+-IC:/Users/marcs/Desktop/gameengine/src/headers -IC:/Users/marcs/Desktop/gameengine/graphicslib/src -IC:/Users/marcs/Desktop/gameengine/graphicslib/libraries/include -IC:/Users/marcs/Desktop/gameengine/graphicslib/shaders

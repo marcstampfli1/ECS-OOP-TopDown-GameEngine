@@ -55,7 +55,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "c:/Users/ur2ba/OneDrive/Desktop/ECS-OOP-TopDown-GameEngine/build"
+			"value" : "c:/Users/marcs/Desktop/gameengine/build"
 		},
 		{
 			"name" : "CMAKE_CACHE_MAJOR_VERSION",
@@ -587,7 +587,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "C:/Users/ur2ba/OneDrive/Desktop/ECS-OOP-TopDown-GameEngine/build/CMakeFiles/pkgRedirects"
+			"value" : "C:/Users/marcs/Desktop/gameengine/build/CMakeFiles/pkgRedirects"
 		},
 		{
 			"name" : "CMAKE_GENERATOR",
@@ -659,7 +659,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "C:/Users/ur2ba/OneDrive/Desktop/ECS-OOP-TopDown-GameEngine"
+			"value" : "C:/Users/marcs/Desktop/gameengine"
 		},
 		{
 			"name" : "CMAKE_INSTALL_PREFIX",
@@ -1295,7 +1295,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "C:/Users/ur2ba/OneDrive/Desktop/ECS-OOP-TopDown-GameEngine/build"
+			"value" : "C:/Users/marcs/Desktop/gameengine/build"
 		},
 		{
 			"name" : "MyRPGEngine_IS_TOP_LEVEL",
@@ -1319,7 +1319,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "C:/Users/ur2ba/OneDrive/Desktop/ECS-OOP-TopDown-GameEngine"
+			"value" : "C:/Users/marcs/Desktop/gameengine"
 		},
 		{
 			"name" : "_CMAKE_CXX_LINKER_PUSHPOP_STATE_SUPPORTED",
