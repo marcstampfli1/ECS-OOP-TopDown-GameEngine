@@ -1,3 +1,0 @@
-C:/Users/ur2ba/OneDrive/Desktop/2D RPG/graphicslib/build/CMakeFiles/graphicslib.dir
-C:/Users/ur2ba/OneDrive/Desktop/2D RPG/graphicslib/build/CMakeFiles/edit_cache.dir
-C:/Users/ur2ba/OneDrive/Desktop/2D RPG/graphicslib/build/CMakeFiles/rebuild_cache.dir

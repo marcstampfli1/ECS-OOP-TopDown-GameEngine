@@ -3,6 +3,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/MyRPGEngine.dir/src/Behaviours.cpp.obj.d"
   "CMakeFiles/MyRPGEngine.dir/src/Component.cpp.obj"
   "CMakeFiles/MyRPGEngine.dir/src/Component.cpp.obj.d"
+  "CMakeFiles/MyRPGEngine.dir/src/DeltaTime.cpp.obj"
+  "CMakeFiles/MyRPGEngine.dir/src/DeltaTime.cpp.obj.d"
   "CMakeFiles/MyRPGEngine.dir/src/Entity.cpp.obj"
   "CMakeFiles/MyRPGEngine.dir/src/Entity.cpp.obj.d"
   "CMakeFiles/MyRPGEngine.dir/src/Render.cpp.obj"

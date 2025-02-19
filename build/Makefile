@@ -56,10 +56,10 @@ RM = "C:\Program Files\CMake\bin\cmake.exe" -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = C:\Users\marcs\Desktop\gameengine
+CMAKE_SOURCE_DIR = C:\Users\ur2ba\OneDrive\Desktop\ECS-OOP-TopDown-GameEngine
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = C:\Users\marcs\Desktop\gameengine\build
+CMAKE_BINARY_DIR = C:\Users\ur2ba\OneDrive\Desktop\ECS-OOP-TopDown-GameEngine\build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -86,9 +86,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\marcs\Desktop\gameengine\build\CMakeFiles C:\Users\marcs\Desktop\gameengine\build\\CMakeFiles\progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\ur2ba\OneDrive\Desktop\ECS-OOP-TopDown-GameEngine\build\CMakeFiles C:\Users\ur2ba\OneDrive\Desktop\ECS-OOP-TopDown-GameEngine\build\\CMakeFiles\progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\marcs\Desktop\gameengine\build\CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\ur2ba\OneDrive\Desktop\ECS-OOP-TopDown-GameEngine\build\CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -175,6 +175,30 @@ src/Component.s: src/Component.cpp.s
 src/Component.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\MyRPGEngine.dir\build.make CMakeFiles/MyRPGEngine.dir/src/Component.cpp.s
 .PHONY : src/Component.cpp.s
+
+src/DeltaTime.obj: src/DeltaTime.cpp.obj
+.PHONY : src/DeltaTime.obj
+
+# target to build an object file
+src/DeltaTime.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\MyRPGEngine.dir\build.make CMakeFiles/MyRPGEngine.dir/src/DeltaTime.cpp.obj
+.PHONY : src/DeltaTime.cpp.obj
+
+src/DeltaTime.i: src/DeltaTime.cpp.i
+.PHONY : src/DeltaTime.i
+
+# target to preprocess a source file
+src/DeltaTime.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\MyRPGEngine.dir\build.make CMakeFiles/MyRPGEngine.dir/src/DeltaTime.cpp.i
+.PHONY : src/DeltaTime.cpp.i
+
+src/DeltaTime.s: src/DeltaTime.cpp.s
+.PHONY : src/DeltaTime.s
+
+# target to generate assembly for a file
+src/DeltaTime.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\MyRPGEngine.dir\build.make CMakeFiles/MyRPGEngine.dir/src/DeltaTime.cpp.s
+.PHONY : src/DeltaTime.cpp.s
 
 src/Entity.obj: src/Entity.cpp.obj
 .PHONY : src/Entity.obj
@@ -311,6 +335,9 @@ help:
 	@echo ... src/Component.obj
 	@echo ... src/Component.i
 	@echo ... src/Component.s
+	@echo ... src/DeltaTime.obj
+	@echo ... src/DeltaTime.i
+	@echo ... src/DeltaTime.s
 	@echo ... src/Entity.obj
 	@echo ... src/Entity.i
 	@echo ... src/Entity.s
