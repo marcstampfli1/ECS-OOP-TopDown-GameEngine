@@ -1,0 +1,2 @@
+C:\msys64\ucrt64\bin\ar.exe qc libgraphicslib.a CMakeFiles/graphicslib.dir/src/Camera.cpp.obj CMakeFiles/graphicslib.dir/src/Mesh.cpp.obj CMakeFiles/graphicslib.dir/src/Shader.cpp.obj CMakeFiles/graphicslib.dir/src/Texture.cpp.obj CMakeFiles/graphicslib.dir/src/Window.cpp.obj
+C:\msys64\ucrt64\bin\ranlib.exe libgraphicslib.a

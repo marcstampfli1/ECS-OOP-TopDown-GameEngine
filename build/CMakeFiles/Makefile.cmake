@@ -120,7 +120,7 @@ set(CMAKE_MAKEFILE_DEPENDS
   "C:/Program Files/CMake/share/cmake-3.31/Modules/Platform/Windows-windres.cmake"
   "C:/Program Files/CMake/share/cmake-3.31/Modules/Platform/Windows.cmake"
   "C:/Program Files/CMake/share/cmake-3.31/Modules/Platform/WindowsPaths.cmake"
-  "C:/Users/marcs/Desktop/gameengine/CMakeLists.txt"
+  "C:/Users/ur2ba/OneDrive/Desktop/ECS-OOP-TopDown-GameEngine/CMakeLists.txt"
   "CMakeFiles/3.31.3/CMakeCCompiler.cmake"
   "CMakeFiles/3.31.3/CMakeCXXCompiler.cmake"
   "CMakeFiles/3.31.3/CMakeRCCompiler.cmake"

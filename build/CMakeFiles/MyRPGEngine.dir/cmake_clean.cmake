@@ -7,6 +7,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/MyRPGEngine.dir/src/Entity.cpp.obj.d"
   "CMakeFiles/MyRPGEngine.dir/src/Render.cpp.obj"
   "CMakeFiles/MyRPGEngine.dir/src/Render.cpp.obj.d"
+  "CMakeFiles/MyRPGEngine.dir/src/ResourceManager.cpp.obj"
+  "CMakeFiles/MyRPGEngine.dir/src/ResourceManager.cpp.obj.d"
   "CMakeFiles/MyRPGEngine.dir/src/Systems.cpp.obj"
   "CMakeFiles/MyRPGEngine.dir/src/Systems.cpp.obj.d"
   "CMakeFiles/MyRPGEngine.dir/src/main.cpp.obj"

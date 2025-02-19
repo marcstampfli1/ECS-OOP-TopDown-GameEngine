@@ -56,10 +56,10 @@ RM = "C:\Program Files\CMake\bin\cmake.exe" -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = C:\Users\marcs\Desktop\gameengine
+CMAKE_SOURCE_DIR = C:\Users\ur2ba\OneDrive\Desktop\ECS-OOP-TopDown-GameEngine
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = C:\Users\marcs\Desktop\gameengine\build
+CMAKE_BINARY_DIR = C:\Users\ur2ba\OneDrive\Desktop\ECS-OOP-TopDown-GameEngine\build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -86,9 +86,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\marcs\Desktop\gameengine\build\CMakeFiles C:\Users\marcs\Desktop\gameengine\build\\CMakeFiles\progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\ur2ba\OneDrive\Desktop\ECS-OOP-TopDown-GameEngine\build\CMakeFiles C:\Users\ur2ba\OneDrive\Desktop\ECS-OOP-TopDown-GameEngine\build\\CMakeFiles\progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\marcs\Desktop\gameengine\build\CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\ur2ba\OneDrive\Desktop\ECS-OOP-TopDown-GameEngine\build\CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -224,6 +224,30 @@ src/Render.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\MyRPGEngine.dir\build.make CMakeFiles/MyRPGEngine.dir/src/Render.cpp.s
 .PHONY : src/Render.cpp.s
 
+src/ResourceManager.obj: src/ResourceManager.cpp.obj
+.PHONY : src/ResourceManager.obj
+
+# target to build an object file
+src/ResourceManager.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\MyRPGEngine.dir\build.make CMakeFiles/MyRPGEngine.dir/src/ResourceManager.cpp.obj
+.PHONY : src/ResourceManager.cpp.obj
+
+src/ResourceManager.i: src/ResourceManager.cpp.i
+.PHONY : src/ResourceManager.i
+
+# target to preprocess a source file
+src/ResourceManager.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\MyRPGEngine.dir\build.make CMakeFiles/MyRPGEngine.dir/src/ResourceManager.cpp.i
+.PHONY : src/ResourceManager.cpp.i
+
+src/ResourceManager.s: src/ResourceManager.cpp.s
+.PHONY : src/ResourceManager.s
+
+# target to generate assembly for a file
+src/ResourceManager.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\MyRPGEngine.dir\build.make CMakeFiles/MyRPGEngine.dir/src/ResourceManager.cpp.s
+.PHONY : src/ResourceManager.cpp.s
+
 src/Systems.obj: src/Systems.cpp.obj
 .PHONY : src/Systems.obj
 
@@ -293,6 +317,9 @@ help:
 	@echo ... src/Render.obj
 	@echo ... src/Render.i
 	@echo ... src/Render.s
+	@echo ... src/ResourceManager.obj
+	@echo ... src/ResourceManager.i
+	@echo ... src/ResourceManager.s
 	@echo ... src/Systems.obj
 	@echo ... src/Systems.i
 	@echo ... src/Systems.s
