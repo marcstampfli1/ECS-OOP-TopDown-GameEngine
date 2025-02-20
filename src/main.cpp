@@ -5,6 +5,7 @@
 #include "headers/Render.h"
 #include "headers/ResourceManager.h"
 #include "headers/DeltaTime.h"
+#include "headers/Events.h"
 
 #include "../graphicslib/src/Window.h" 
 #include "../graphicslib/src/Shader.h" 
@@ -28,7 +29,7 @@ int main() {
     rm.healthComponents[rm.player] = {100, 100};
     rm.sizeComponents[rm.player] = {50, 50};
     rm.behaviours[rm.player] = std::make_shared<PlayerBehaviour>();
-    rm.typeComponents[rm.player] = std::make_shared<TypeComponent>(TypeComponent{EntityType::PLAYER});
+    rm.typeComponents[rm.player] = EntityType::PLAYER;
 
     Entity enemy = rm.entityManager.createEntity();
     rm.positionComponents[enemy] = {200, 200};
@@ -36,8 +37,11 @@ int main() {
     rm.healthComponents[enemy] = {100, 100};
     rm.sizeComponents[enemy] = {50, 50};
     rm.behaviours[enemy] = std::make_shared<EnemyBehaviour>();
-    rm.typeComponents[enemy] = std::make_shared<TypeComponent>(TypeComponent{EntityType::ENEMY});
+    rm.typeComponents[enemy] = EntityType::ENEMY;
     
+    rm.statusSystem.initialize();
+    rm.damageSystem.initialize();
+
     initRendering();
 
     rm.textureComponents[rm.player] = rm.textures["player"].get();

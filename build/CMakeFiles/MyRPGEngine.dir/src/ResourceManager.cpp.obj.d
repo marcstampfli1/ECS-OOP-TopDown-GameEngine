@@ -354,4 +354,5 @@ CMakeFiles/MyRPGEngine.dir/src/ResourceManager.cpp.obj: \
  C:/msys64/ucrt64/include/c++/13.2.0/pstl/execution_defs.h \
  C:\Users\ur2ba\OneDrive\Desktop\ECS-OOP-TopDown-GameEngine\src\headers/Systems.h \
  C:\Users\ur2ba\OneDrive\Desktop\ECS-OOP-TopDown-GameEngine\src\headers/Events.h \
+ C:/msys64/ucrt64/include/c++/13.2.0/typeindex \
  C:\Users\ur2ba\OneDrive\Desktop\ECS-OOP-TopDown-GameEngine\src\headers/Effects.h

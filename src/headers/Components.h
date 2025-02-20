@@ -24,6 +24,3 @@ enum class EntityType {
     NPC
 };
 
-struct TypeComponent {
-    EntityType type;
-};

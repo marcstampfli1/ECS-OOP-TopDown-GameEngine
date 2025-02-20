@@ -20,7 +20,7 @@ public:
     std::unordered_map<Entity, Size> sizeComponents;
     std::unordered_map<Entity, Health> healthComponents;
     std::unordered_map<Entity, std::shared_ptr<EntityBehaviour>> behaviours;
-    std::unordered_map<Entity, std::shared_ptr<TypeComponent>> typeComponents;
+    std::unordered_map<Entity, EntityType> typeComponents;
 
     std::unordered_map<Entity, Shader*> shaderComponents;
     std::unordered_map<Entity, Texture*> textureComponents;
@@ -29,12 +29,15 @@ public:
     std::unordered_map<std::string, std::shared_ptr<Texture>> textures;
     std::unordered_map<std::string, std::shared_ptr<Shader>> shaders;
 
+    
     EntityManager entityManager;
-
     Entity player;
+
+    EventBus eventBus;
+    DamageSystem damageSystem;
     MovementSystem movementSystem;
-    EventSystem eventSystem;
-    CombatSystem combatSystem;
+
+    CollisionSystem collisionSystem;
     StatusSystem statusSystem;
 
     std::vector<Entity> sortedDrawEntities;

@@ -1,4 +1,4 @@
-#include "headers/Effects.h"
+/*#include "headers/Effects.h"
 #include "headers/ResourceManager.h"
 #include <memory>
 
@@ -8,4 +8,4 @@ void EnemyTouchingPlayerStatus::applyEffect() {
 
     rm.eventSystem.addEvent(std::make_unique<DamageEvent>(target, rm.player, damageAmount));
 
-}
+}*/

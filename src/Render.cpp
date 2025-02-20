@@ -104,9 +104,9 @@ void renderPlayers() {
         (*rm.meshComponents[entity]).draw();
         (*rm.behaviours[entity]).update(entity, deltaTime);
     }
-    rm.eventSystem.update();
+    
     rm.movementSystem.update(deltaTime);
-    rm.combatSystem.update(deltaTime);
+    rm.collisionSystem.update(deltaTime);
     rm.statusSystem.update(deltaTime);
 }
 

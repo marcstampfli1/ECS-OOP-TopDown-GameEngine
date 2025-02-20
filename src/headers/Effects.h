@@ -1,9 +1,9 @@
-#pragma once
+/*#pragma once
 #include "Entity.h"
 #include <functional>
 #include <memory>
 
-class StatusEffect {
+class Status {
 public:
     // Optionally, you might store a source if needed.
     Entity source; // For example, the enemy applying the effect.
@@ -14,21 +14,21 @@ public:
     std::function<bool()> condition;  
 
     // Constructor: no duration, just an interval and a condition.
-    StatusEffect(Entity source, Entity target, float interval, std::function<bool()> condition)
+    Status(Entity source, Entity target, float interval, std::function<bool()> condition)
         : source(source), target(target), interval(interval), condition(condition) {}
 
     virtual void applyEffect() = 0; // Each effect defines its own behavior.
-    virtual ~StatusEffect() = default;
+    virtual ~Status() = default;
 };
 
-class EnemyTouchingPlayerStatus : public StatusEffect {
+class EnemyTouchingPlayerStatus : public Status {
 public:
     float damageAmount;
 
     EnemyTouchingPlayerStatus(Entity source, Entity target, float interval, std::function<bool()> condition, float damage)
-        : StatusEffect(source, target, interval, condition), damageAmount(damage) {}
+        : Status(source, target, interval, condition), damageAmount(damage) {}
 
     void applyEffect() override;
 };
-        
+*/
     
