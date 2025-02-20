@@ -25,9 +25,21 @@
 },
 {
   "directory": "C:/Users/ur2ba/OneDrive/Desktop/ECS-OOP-TopDown-GameEngine/build",
+  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe  @CMakeFiles/MyRPGEngine.dir/includes_CXX.rsp -g -std=gnu++23 -o CMakeFiles\\MyRPGEngine.dir\\src\\Effects.cpp.obj -c C:\\Users\\ur2ba\\OneDrive\\Desktop\\ECS-OOP-TopDown-GameEngine\\src\\Effects.cpp",
+  "file": "C:/Users/ur2ba/OneDrive/Desktop/ECS-OOP-TopDown-GameEngine/src/Effects.cpp",
+  "output": "CMakeFiles/MyRPGEngine.dir/src/Effects.cpp.obj"
+},
+{
+  "directory": "C:/Users/ur2ba/OneDrive/Desktop/ECS-OOP-TopDown-GameEngine/build",
   "command": "C:\\msys64\\ucrt64\\bin\\g++.exe  @CMakeFiles/MyRPGEngine.dir/includes_CXX.rsp -g -std=gnu++23 -o CMakeFiles\\MyRPGEngine.dir\\src\\Entity.cpp.obj -c C:\\Users\\ur2ba\\OneDrive\\Desktop\\ECS-OOP-TopDown-GameEngine\\src\\Entity.cpp",
   "file": "C:/Users/ur2ba/OneDrive/Desktop/ECS-OOP-TopDown-GameEngine/src/Entity.cpp",
   "output": "CMakeFiles/MyRPGEngine.dir/src/Entity.cpp.obj"
+},
+{
+  "directory": "C:/Users/ur2ba/OneDrive/Desktop/ECS-OOP-TopDown-GameEngine/build",
+  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe  @CMakeFiles/MyRPGEngine.dir/includes_CXX.rsp -g -std=gnu++23 -o CMakeFiles\\MyRPGEngine.dir\\src\\Events.cpp.obj -c C:\\Users\\ur2ba\\OneDrive\\Desktop\\ECS-OOP-TopDown-GameEngine\\src\\Events.cpp",
+  "file": "C:/Users/ur2ba/OneDrive/Desktop/ECS-OOP-TopDown-GameEngine/src/Events.cpp",
+  "output": "CMakeFiles/MyRPGEngine.dir/src/Events.cpp.obj"
 },
 {
   "directory": "C:/Users/ur2ba/OneDrive/Desktop/ECS-OOP-TopDown-GameEngine/build",

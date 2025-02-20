@@ -131,11 +131,26 @@ CMakeFiles/MyRPGEngine.dir/src/DeltaTime.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/MyRPGEngine.dir/src/DeltaTime.cpp.s"
 	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\ur2ba\OneDrive\Desktop\ECS-OOP-TopDown-GameEngine\src\DeltaTime.cpp -o CMakeFiles\MyRPGEngine.dir\src\DeltaTime.cpp.s
 
+CMakeFiles/MyRPGEngine.dir/src/Effects.cpp.obj: CMakeFiles/MyRPGEngine.dir/flags.make
+CMakeFiles/MyRPGEngine.dir/src/Effects.cpp.obj: CMakeFiles/MyRPGEngine.dir/includes_CXX.rsp
+CMakeFiles/MyRPGEngine.dir/src/Effects.cpp.obj: C:/Users/ur2ba/OneDrive/Desktop/ECS-OOP-TopDown-GameEngine/src/Effects.cpp
+CMakeFiles/MyRPGEngine.dir/src/Effects.cpp.obj: CMakeFiles/MyRPGEngine.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\ur2ba\OneDrive\Desktop\ECS-OOP-TopDown-GameEngine\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/MyRPGEngine.dir/src/Effects.cpp.obj"
+	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/MyRPGEngine.dir/src/Effects.cpp.obj -MF CMakeFiles\MyRPGEngine.dir\src\Effects.cpp.obj.d -o CMakeFiles\MyRPGEngine.dir\src\Effects.cpp.obj -c C:\Users\ur2ba\OneDrive\Desktop\ECS-OOP-TopDown-GameEngine\src\Effects.cpp
+
+CMakeFiles/MyRPGEngine.dir/src/Effects.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/MyRPGEngine.dir/src/Effects.cpp.i"
+	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\ur2ba\OneDrive\Desktop\ECS-OOP-TopDown-GameEngine\src\Effects.cpp > CMakeFiles\MyRPGEngine.dir\src\Effects.cpp.i
+
+CMakeFiles/MyRPGEngine.dir/src/Effects.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/MyRPGEngine.dir/src/Effects.cpp.s"
+	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\ur2ba\OneDrive\Desktop\ECS-OOP-TopDown-GameEngine\src\Effects.cpp -o CMakeFiles\MyRPGEngine.dir\src\Effects.cpp.s
+
 CMakeFiles/MyRPGEngine.dir/src/Entity.cpp.obj: CMakeFiles/MyRPGEngine.dir/flags.make
 CMakeFiles/MyRPGEngine.dir/src/Entity.cpp.obj: CMakeFiles/MyRPGEngine.dir/includes_CXX.rsp
 CMakeFiles/MyRPGEngine.dir/src/Entity.cpp.obj: C:/Users/ur2ba/OneDrive/Desktop/ECS-OOP-TopDown-GameEngine/src/Entity.cpp
 CMakeFiles/MyRPGEngine.dir/src/Entity.cpp.obj: CMakeFiles/MyRPGEngine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\ur2ba\OneDrive\Desktop\ECS-OOP-TopDown-GameEngine\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/MyRPGEngine.dir/src/Entity.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\ur2ba\OneDrive\Desktop\ECS-OOP-TopDown-GameEngine\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/MyRPGEngine.dir/src/Entity.cpp.obj"
 	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/MyRPGEngine.dir/src/Entity.cpp.obj -MF CMakeFiles\MyRPGEngine.dir\src\Entity.cpp.obj.d -o CMakeFiles\MyRPGEngine.dir\src\Entity.cpp.obj -c C:\Users\ur2ba\OneDrive\Desktop\ECS-OOP-TopDown-GameEngine\src\Entity.cpp
 
 CMakeFiles/MyRPGEngine.dir/src/Entity.cpp.i: cmake_force
@@ -146,11 +161,26 @@ CMakeFiles/MyRPGEngine.dir/src/Entity.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/MyRPGEngine.dir/src/Entity.cpp.s"
 	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\ur2ba\OneDrive\Desktop\ECS-OOP-TopDown-GameEngine\src\Entity.cpp -o CMakeFiles\MyRPGEngine.dir\src\Entity.cpp.s
 
+CMakeFiles/MyRPGEngine.dir/src/Events.cpp.obj: CMakeFiles/MyRPGEngine.dir/flags.make
+CMakeFiles/MyRPGEngine.dir/src/Events.cpp.obj: CMakeFiles/MyRPGEngine.dir/includes_CXX.rsp
+CMakeFiles/MyRPGEngine.dir/src/Events.cpp.obj: C:/Users/ur2ba/OneDrive/Desktop/ECS-OOP-TopDown-GameEngine/src/Events.cpp
+CMakeFiles/MyRPGEngine.dir/src/Events.cpp.obj: CMakeFiles/MyRPGEngine.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\ur2ba\OneDrive\Desktop\ECS-OOP-TopDown-GameEngine\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/MyRPGEngine.dir/src/Events.cpp.obj"
+	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/MyRPGEngine.dir/src/Events.cpp.obj -MF CMakeFiles\MyRPGEngine.dir\src\Events.cpp.obj.d -o CMakeFiles\MyRPGEngine.dir\src\Events.cpp.obj -c C:\Users\ur2ba\OneDrive\Desktop\ECS-OOP-TopDown-GameEngine\src\Events.cpp
+
+CMakeFiles/MyRPGEngine.dir/src/Events.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/MyRPGEngine.dir/src/Events.cpp.i"
+	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\ur2ba\OneDrive\Desktop\ECS-OOP-TopDown-GameEngine\src\Events.cpp > CMakeFiles\MyRPGEngine.dir\src\Events.cpp.i
+
+CMakeFiles/MyRPGEngine.dir/src/Events.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/MyRPGEngine.dir/src/Events.cpp.s"
+	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\ur2ba\OneDrive\Desktop\ECS-OOP-TopDown-GameEngine\src\Events.cpp -o CMakeFiles\MyRPGEngine.dir\src\Events.cpp.s
+
 CMakeFiles/MyRPGEngine.dir/src/Render.cpp.obj: CMakeFiles/MyRPGEngine.dir/flags.make
 CMakeFiles/MyRPGEngine.dir/src/Render.cpp.obj: CMakeFiles/MyRPGEngine.dir/includes_CXX.rsp
 CMakeFiles/MyRPGEngine.dir/src/Render.cpp.obj: C:/Users/ur2ba/OneDrive/Desktop/ECS-OOP-TopDown-GameEngine/src/Render.cpp
 CMakeFiles/MyRPGEngine.dir/src/Render.cpp.obj: CMakeFiles/MyRPGEngine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\ur2ba\OneDrive\Desktop\ECS-OOP-TopDown-GameEngine\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/MyRPGEngine.dir/src/Render.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\ur2ba\OneDrive\Desktop\ECS-OOP-TopDown-GameEngine\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/MyRPGEngine.dir/src/Render.cpp.obj"
 	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/MyRPGEngine.dir/src/Render.cpp.obj -MF CMakeFiles\MyRPGEngine.dir\src\Render.cpp.obj.d -o CMakeFiles\MyRPGEngine.dir\src\Render.cpp.obj -c C:\Users\ur2ba\OneDrive\Desktop\ECS-OOP-TopDown-GameEngine\src\Render.cpp
 
 CMakeFiles/MyRPGEngine.dir/src/Render.cpp.i: cmake_force
@@ -165,7 +195,7 @@ CMakeFiles/MyRPGEngine.dir/src/ResourceManager.cpp.obj: CMakeFiles/MyRPGEngine.d
 CMakeFiles/MyRPGEngine.dir/src/ResourceManager.cpp.obj: CMakeFiles/MyRPGEngine.dir/includes_CXX.rsp
 CMakeFiles/MyRPGEngine.dir/src/ResourceManager.cpp.obj: C:/Users/ur2ba/OneDrive/Desktop/ECS-OOP-TopDown-GameEngine/src/ResourceManager.cpp
 CMakeFiles/MyRPGEngine.dir/src/ResourceManager.cpp.obj: CMakeFiles/MyRPGEngine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\ur2ba\OneDrive\Desktop\ECS-OOP-TopDown-GameEngine\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/MyRPGEngine.dir/src/ResourceManager.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\ur2ba\OneDrive\Desktop\ECS-OOP-TopDown-GameEngine\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/MyRPGEngine.dir/src/ResourceManager.cpp.obj"
 	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/MyRPGEngine.dir/src/ResourceManager.cpp.obj -MF CMakeFiles\MyRPGEngine.dir\src\ResourceManager.cpp.obj.d -o CMakeFiles\MyRPGEngine.dir\src\ResourceManager.cpp.obj -c C:\Users\ur2ba\OneDrive\Desktop\ECS-OOP-TopDown-GameEngine\src\ResourceManager.cpp
 
 CMakeFiles/MyRPGEngine.dir/src/ResourceManager.cpp.i: cmake_force
@@ -180,7 +210,7 @@ CMakeFiles/MyRPGEngine.dir/src/Systems.cpp.obj: CMakeFiles/MyRPGEngine.dir/flags
 CMakeFiles/MyRPGEngine.dir/src/Systems.cpp.obj: CMakeFiles/MyRPGEngine.dir/includes_CXX.rsp
 CMakeFiles/MyRPGEngine.dir/src/Systems.cpp.obj: C:/Users/ur2ba/OneDrive/Desktop/ECS-OOP-TopDown-GameEngine/src/Systems.cpp
 CMakeFiles/MyRPGEngine.dir/src/Systems.cpp.obj: CMakeFiles/MyRPGEngine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\ur2ba\OneDrive\Desktop\ECS-OOP-TopDown-GameEngine\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/MyRPGEngine.dir/src/Systems.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\ur2ba\OneDrive\Desktop\ECS-OOP-TopDown-GameEngine\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/MyRPGEngine.dir/src/Systems.cpp.obj"
 	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/MyRPGEngine.dir/src/Systems.cpp.obj -MF CMakeFiles\MyRPGEngine.dir\src\Systems.cpp.obj.d -o CMakeFiles\MyRPGEngine.dir\src\Systems.cpp.obj -c C:\Users\ur2ba\OneDrive\Desktop\ECS-OOP-TopDown-GameEngine\src\Systems.cpp
 
 CMakeFiles/MyRPGEngine.dir/src/Systems.cpp.i: cmake_force
@@ -197,7 +227,9 @@ MyRPGEngine_OBJECTS = \
 "CMakeFiles/MyRPGEngine.dir/src/Behaviours.cpp.obj" \
 "CMakeFiles/MyRPGEngine.dir/src/Component.cpp.obj" \
 "CMakeFiles/MyRPGEngine.dir/src/DeltaTime.cpp.obj" \
+"CMakeFiles/MyRPGEngine.dir/src/Effects.cpp.obj" \
 "CMakeFiles/MyRPGEngine.dir/src/Entity.cpp.obj" \
+"CMakeFiles/MyRPGEngine.dir/src/Events.cpp.obj" \
 "CMakeFiles/MyRPGEngine.dir/src/Render.cpp.obj" \
 "CMakeFiles/MyRPGEngine.dir/src/ResourceManager.cpp.obj" \
 "CMakeFiles/MyRPGEngine.dir/src/Systems.cpp.obj"
@@ -209,7 +241,9 @@ MyRPGEngine.exe: CMakeFiles/MyRPGEngine.dir/src/main.cpp.obj
 MyRPGEngine.exe: CMakeFiles/MyRPGEngine.dir/src/Behaviours.cpp.obj
 MyRPGEngine.exe: CMakeFiles/MyRPGEngine.dir/src/Component.cpp.obj
 MyRPGEngine.exe: CMakeFiles/MyRPGEngine.dir/src/DeltaTime.cpp.obj
+MyRPGEngine.exe: CMakeFiles/MyRPGEngine.dir/src/Effects.cpp.obj
 MyRPGEngine.exe: CMakeFiles/MyRPGEngine.dir/src/Entity.cpp.obj
+MyRPGEngine.exe: CMakeFiles/MyRPGEngine.dir/src/Events.cpp.obj
 MyRPGEngine.exe: CMakeFiles/MyRPGEngine.dir/src/Render.cpp.obj
 MyRPGEngine.exe: CMakeFiles/MyRPGEngine.dir/src/ResourceManager.cpp.obj
 MyRPGEngine.exe: CMakeFiles/MyRPGEngine.dir/src/Systems.cpp.obj
@@ -220,7 +254,7 @@ MyRPGEngine.exe: C:/Users/ur2ba/OneDrive/Desktop/ECS-OOP-TopDown-GameEngine/grap
 MyRPGEngine.exe: CMakeFiles/MyRPGEngine.dir/linkLibs.rsp
 MyRPGEngine.exe: CMakeFiles/MyRPGEngine.dir/objects1.rsp
 MyRPGEngine.exe: CMakeFiles/MyRPGEngine.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=C:\Users\ur2ba\OneDrive\Desktop\ECS-OOP-TopDown-GameEngine\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking CXX executable MyRPGEngine.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=C:\Users\ur2ba\OneDrive\Desktop\ECS-OOP-TopDown-GameEngine\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Linking CXX executable MyRPGEngine.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\MyRPGEngine.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

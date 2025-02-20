@@ -200,6 +200,30 @@ src/DeltaTime.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\MyRPGEngine.dir\build.make CMakeFiles/MyRPGEngine.dir/src/DeltaTime.cpp.s
 .PHONY : src/DeltaTime.cpp.s
 
+src/Effects.obj: src/Effects.cpp.obj
+.PHONY : src/Effects.obj
+
+# target to build an object file
+src/Effects.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\MyRPGEngine.dir\build.make CMakeFiles/MyRPGEngine.dir/src/Effects.cpp.obj
+.PHONY : src/Effects.cpp.obj
+
+src/Effects.i: src/Effects.cpp.i
+.PHONY : src/Effects.i
+
+# target to preprocess a source file
+src/Effects.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\MyRPGEngine.dir\build.make CMakeFiles/MyRPGEngine.dir/src/Effects.cpp.i
+.PHONY : src/Effects.cpp.i
+
+src/Effects.s: src/Effects.cpp.s
+.PHONY : src/Effects.s
+
+# target to generate assembly for a file
+src/Effects.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\MyRPGEngine.dir\build.make CMakeFiles/MyRPGEngine.dir/src/Effects.cpp.s
+.PHONY : src/Effects.cpp.s
+
 src/Entity.obj: src/Entity.cpp.obj
 .PHONY : src/Entity.obj
 
@@ -223,6 +247,30 @@ src/Entity.s: src/Entity.cpp.s
 src/Entity.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\MyRPGEngine.dir\build.make CMakeFiles/MyRPGEngine.dir/src/Entity.cpp.s
 .PHONY : src/Entity.cpp.s
+
+src/Events.obj: src/Events.cpp.obj
+.PHONY : src/Events.obj
+
+# target to build an object file
+src/Events.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\MyRPGEngine.dir\build.make CMakeFiles/MyRPGEngine.dir/src/Events.cpp.obj
+.PHONY : src/Events.cpp.obj
+
+src/Events.i: src/Events.cpp.i
+.PHONY : src/Events.i
+
+# target to preprocess a source file
+src/Events.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\MyRPGEngine.dir\build.make CMakeFiles/MyRPGEngine.dir/src/Events.cpp.i
+.PHONY : src/Events.cpp.i
+
+src/Events.s: src/Events.cpp.s
+.PHONY : src/Events.s
+
+# target to generate assembly for a file
+src/Events.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\MyRPGEngine.dir\build.make CMakeFiles/MyRPGEngine.dir/src/Events.cpp.s
+.PHONY : src/Events.cpp.s
 
 src/Render.obj: src/Render.cpp.obj
 .PHONY : src/Render.obj
@@ -338,9 +386,15 @@ help:
 	@echo ... src/DeltaTime.obj
 	@echo ... src/DeltaTime.i
 	@echo ... src/DeltaTime.s
+	@echo ... src/Effects.obj
+	@echo ... src/Effects.i
+	@echo ... src/Effects.s
 	@echo ... src/Entity.obj
 	@echo ... src/Entity.i
 	@echo ... src/Entity.s
+	@echo ... src/Events.obj
+	@echo ... src/Events.i
+	@echo ... src/Events.s
 	@echo ... src/Render.obj
 	@echo ... src/Render.i
 	@echo ... src/Render.s

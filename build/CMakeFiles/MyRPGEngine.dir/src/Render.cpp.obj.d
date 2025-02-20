@@ -381,4 +381,5 @@ CMakeFiles/MyRPGEngine.dir/src/Render.cpp.obj: \
  C:/msys64/ucrt64/include/c++/13.2.0/bits/ranges_uninitialized.h \
  C:/msys64/ucrt64/include/c++/13.2.0/pstl/glue_memory_defs.h \
  C:\Users\ur2ba\OneDrive\Desktop\ECS-OOP-TopDown-GameEngine\src\headers/Systems.h \
- C:\Users\ur2ba\OneDrive\Desktop\ECS-OOP-TopDown-GameEngine\src\headers/Events.h
+ C:\Users\ur2ba\OneDrive\Desktop\ECS-OOP-TopDown-GameEngine\src\headers/Events.h \
+ C:\Users\ur2ba\OneDrive\Desktop\ECS-OOP-TopDown-GameEngine\src\headers/Effects.h
