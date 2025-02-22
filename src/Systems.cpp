@@ -1,46 +1,57 @@
 #include "headers/Systems.h"
 #include "headers/Entity.h"
 #include "headers/Components.h"
-#include "headers/ResourceManager.h"
+#include "headers/Managers.h"
 #include "headers/Events.h"
+
 #include <memory>
 #include <algorithm>
 #include <typeinfo>
 
 
-extern ResourceManager& rm;
 
 void MovementSystem::update(float dt) {
-    for (auto& entity : rm.entityManager.getEntities()) {
-        if (rm.positionComponents.find(entity) != rm.positionComponents.end()) {
-            rm.positionComponents[entity].x += rm.velocityComponents[entity].vx * dt;
-            rm.positionComponents[entity].y += rm.velocityComponents[entity].vy * dt;
+    for (auto& entity : entityManager->getAllEntities()) {
+        if (entityManager->getPosition(entity)) {
+            entityManager->getPosition(entity)->x += entityManager->getVelocity(entity)->vx * dt;
+            entityManager->getPosition(entity)->y += entityManager->getVelocity(entity)->vy * dt;
         }
     }
 }
 
-void DamageSystem::initialize() {
-    rm.eventBus.subscribe<DamageEvent>([this](const DamageEvent& damageEvent) {
-        (*this).applyDamage(damageEvent);
+void MovementSystem::initialize(std::shared_ptr<EntityManager> em) {
+    entityManager = em;
+}
+
+void DamageSystem::initialize(std::shared_ptr<EntityManager> em, std::shared_ptr<EventBus> eb) {
+    entityManager = em;
+    eventBus = eb;
+    eventBus->subscribe<DamageEvent>([this](const DamageEvent& damageEvent) {
+        this->applyDamage(damageEvent);
     });
 }
 
 void DamageSystem::applyDamage(const DamageEvent& damageEvent) {
-    if (rm.healthComponents.find(damageEvent.target) != rm.healthComponents.end()) {
-        rm.healthComponents[damageEvent.target].currentHealth -= damageEvent.damageAmount;
-    }
+    Health* entityHealth = entityManager->getHealth(damageEvent.target);
+    if (!entityHealth) return;
+
+    entityHealth->currentHealth -= damageEvent.damageAmount;
+    
+}
+
+void DamageSystem::update(float dt) {
+    return;
 }
 
 void StatusSystem::update(float dt) {
 
     for (auto it = activeStatuses.begin(); it != activeStatuses.end();) {
         auto& status = *it;
-        //if (!(*status).condition()) removeStatus(status);
         (*status).timeSinceLastTick += dt;
 
         // Apply effect if enough time has passed
         if ((*status).timeSinceLastTick >= (*status).interval) {
-            rm.eventBus.publish(DamageEvent((*status).source, (*status).target, 10.0f, EventType::Executable));
+            eventBus->publish(DamageEvent((*status).source, (*status).target, 10.0f, EventType::Executable));
             (*status).timeSinceLastTick = 0; // Reset timer
         }
 
@@ -53,9 +64,10 @@ void StatusSystem::update(float dt) {
     }
 }
 
-void StatusSystem::initialize() {
-    rm.eventBus.subscribe<StatusAppliedEvent>([this](const StatusAppliedEvent& statusEvent) {
-        (*this).addStatus(std::make_shared<StatusAppliedEvent>(statusEvent));
+void StatusSystem::initialize(std::shared_ptr<EventBus> eb) {
+    eventBus = eb;
+    eventBus->subscribe<StatusAppliedEvent>([this](const StatusAppliedEvent& statusEvent) {
+        this->addStatus(std::make_shared<StatusAppliedEvent>(statusEvent));
     });
 }
 
@@ -75,41 +87,26 @@ void StatusSystem::removeStatus(std::shared_ptr<StatusAppliedEvent> status) {
     activeStatuses.erase(it, activeStatuses.end());
 }
 
-/*void applyEnemyTouchStatus(Entity entity) {
-    // Check if entity is an enemy
-    if (rm.behaviours.find(entity) != rm.behaviours.end() &&
-    dynamic_cast<EnemyBehaviour*>(rm.behaviours[entity].get())) {
-    
-        if (checkAABBCollision(entity, rm.player)) {
-            bool effectAlreadyActive = std::any_of(
-                rm.statusSystem.activeEffects.begin(),
-                rm.statusSystem.activeEffects.end(),
-                [entity](const std::shared_ptr<Status>& effect) {
-                    return (*effect).source == entity && (*effect).target == rm.player &&
-                            dynamic_cast<EnemyTouchingPlayerStatus*>(effect.get()) != nullptr;
-                }
-            );
-            
-            if (effectAlreadyActive) {
-                return;
-            }
-            
-            rm.statusSystem.addStatus(std::make_unique<EnemyTouchingPlayerStatus>(entity, rm.player, 1.0f, [entity]() -> bool { return checkAABBCollision(entity, rm.player); }, 10)); 
-        }
-    }
-}*/
+void CollisionSystem::initialize(std::shared_ptr<EntityManager> em, std::shared_ptr<EventBus> eb) {
+    entityManager = em;
+    eventBus = eb;
+}
 
-bool CollisionSystem::checkAABBCollision(Entity a, Entity b) {
-    Position posA = rm.positionComponents[a];
-    Size sizeA = rm.sizeComponents[a];
-    Position posB = rm.positionComponents[b];
-    Size sizeB = rm.sizeComponents[b];
+
+bool CollisionSystem::checkAABBCollision(Entity entity1, Entity entity2) {
+
+    const Position* posA = entityManager->getPosition(entity1);
+    const Size* sizeA = entityManager->getSize(entity1);
+    const Position* posB = entityManager->getPosition(entity2);
+    const Size* sizeB = entityManager->getSize(entity2);
+
+    if (!posA || !sizeA || !posB || !sizeB) return false;
 
     // AABB collision check (assuming top-left origin)
-    return (posA.x < posB.x + sizeB.w &&
-            posA.x + sizeA.w > posB.x &&
-            posA.y < posB.y + sizeB.h &&
-            posA.y + sizeA.h > posB.y);
+    return (posA->x < posB->x + sizeB->w &&
+            posA->x + sizeA->w > posB->x &&
+            posA->y < posB->y + sizeB->h &&
+            posA->y + sizeA->h > posB->y);
 }
 
 bool CollisionSystem::isColliding(Entity firstEntity, Entity secondEntity) const {
@@ -126,18 +123,16 @@ void CollisionSystem::update(float dt) {
     // Temporary map to hold new collision states
     std::unordered_map<Entity, std::unordered_set<Entity>> newCollisions;
 
-    const std::unordered_set<Entity> entities = rm.entityManager.getEntities();
+    const std::unordered_set<Entity> entities = entityManager->getAllEntities();
 
     //check collision between all entities
     for (auto iterator1 = entities.begin(); iterator1 != entities.end(); ++iterator1) {
         for (auto iterator2 = std::next(iterator1); iterator2 != entities.end(); ++iterator2) {
             // Check both entities for size & pos
-            if (hasSizeAndPos(*iterator1) && hasSizeAndPos(*iterator2)) {
-
-                if (checkAABBCollision(*iterator1, *iterator2)) {
-                    newCollisions[*iterator1].insert(*iterator2);
-                    newCollisions[*iterator2].insert(*iterator1);
-                }
+            
+            if (checkAABBCollision(*iterator1, *iterator2)) {
+                newCollisions[*iterator1].insert(*iterator2);
+                newCollisions[*iterator2].insert(*iterator1);
             }
         }
     }
@@ -145,7 +140,7 @@ void CollisionSystem::update(float dt) {
     for (auto& [entity, newSet] : newCollisions) {
         for (Entity collider : newSet) {
             if (currentCollisions[entity].find(collider) == currentCollisions[entity].end()) {
-                rm.eventBus.publish<StatusAppliedEvent>(StatusAppliedEvent(entity, collider, EventType::Touching, 1.0f, [this, entity, collider]() -> bool { return isColliding(entity, collider); }));
+                eventBus->publish<StatusAppliedEvent>(StatusAppliedEvent(entity, collider, EventType::Touching, 1.0f, [this, entity, collider]() -> bool { return isColliding(entity, collider); }));
             }
         }
     }
@@ -161,8 +156,3 @@ void CollisionSystem::update(float dt) {
     currentCollisions = std::move(newCollisions);
 }
 
-
-bool CollisionSystem::hasSizeAndPos(Entity entity) {
-    return rm.positionComponents.find(entity) != rm.positionComponents.end() &&
-    rm.sizeComponents.find(entity) != rm.sizeComponents.end();
-}

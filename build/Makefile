@@ -200,30 +200,6 @@ src/DeltaTime.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\MyRPGEngine.dir\build.make CMakeFiles/MyRPGEngine.dir/src/DeltaTime.cpp.s
 .PHONY : src/DeltaTime.cpp.s
 
-src/Effects.obj: src/Effects.cpp.obj
-.PHONY : src/Effects.obj
-
-# target to build an object file
-src/Effects.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\MyRPGEngine.dir\build.make CMakeFiles/MyRPGEngine.dir/src/Effects.cpp.obj
-.PHONY : src/Effects.cpp.obj
-
-src/Effects.i: src/Effects.cpp.i
-.PHONY : src/Effects.i
-
-# target to preprocess a source file
-src/Effects.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\MyRPGEngine.dir\build.make CMakeFiles/MyRPGEngine.dir/src/Effects.cpp.i
-.PHONY : src/Effects.cpp.i
-
-src/Effects.s: src/Effects.cpp.s
-.PHONY : src/Effects.s
-
-# target to generate assembly for a file
-src/Effects.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\MyRPGEngine.dir\build.make CMakeFiles/MyRPGEngine.dir/src/Effects.cpp.s
-.PHONY : src/Effects.cpp.s
-
 src/Entity.obj: src/Entity.cpp.obj
 .PHONY : src/Entity.obj
 
@@ -272,53 +248,29 @@ src/Events.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\MyRPGEngine.dir\build.make CMakeFiles/MyRPGEngine.dir/src/Events.cpp.s
 .PHONY : src/Events.cpp.s
 
-src/Render.obj: src/Render.cpp.obj
-.PHONY : src/Render.obj
+src/Managers.obj: src/Managers.cpp.obj
+.PHONY : src/Managers.obj
 
 # target to build an object file
-src/Render.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\MyRPGEngine.dir\build.make CMakeFiles/MyRPGEngine.dir/src/Render.cpp.obj
-.PHONY : src/Render.cpp.obj
+src/Managers.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\MyRPGEngine.dir\build.make CMakeFiles/MyRPGEngine.dir/src/Managers.cpp.obj
+.PHONY : src/Managers.cpp.obj
 
-src/Render.i: src/Render.cpp.i
-.PHONY : src/Render.i
-
-# target to preprocess a source file
-src/Render.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\MyRPGEngine.dir\build.make CMakeFiles/MyRPGEngine.dir/src/Render.cpp.i
-.PHONY : src/Render.cpp.i
-
-src/Render.s: src/Render.cpp.s
-.PHONY : src/Render.s
-
-# target to generate assembly for a file
-src/Render.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\MyRPGEngine.dir\build.make CMakeFiles/MyRPGEngine.dir/src/Render.cpp.s
-.PHONY : src/Render.cpp.s
-
-src/ResourceManager.obj: src/ResourceManager.cpp.obj
-.PHONY : src/ResourceManager.obj
-
-# target to build an object file
-src/ResourceManager.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\MyRPGEngine.dir\build.make CMakeFiles/MyRPGEngine.dir/src/ResourceManager.cpp.obj
-.PHONY : src/ResourceManager.cpp.obj
-
-src/ResourceManager.i: src/ResourceManager.cpp.i
-.PHONY : src/ResourceManager.i
+src/Managers.i: src/Managers.cpp.i
+.PHONY : src/Managers.i
 
 # target to preprocess a source file
-src/ResourceManager.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\MyRPGEngine.dir\build.make CMakeFiles/MyRPGEngine.dir/src/ResourceManager.cpp.i
-.PHONY : src/ResourceManager.cpp.i
+src/Managers.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\MyRPGEngine.dir\build.make CMakeFiles/MyRPGEngine.dir/src/Managers.cpp.i
+.PHONY : src/Managers.cpp.i
 
-src/ResourceManager.s: src/ResourceManager.cpp.s
-.PHONY : src/ResourceManager.s
+src/Managers.s: src/Managers.cpp.s
+.PHONY : src/Managers.s
 
 # target to generate assembly for a file
-src/ResourceManager.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\MyRPGEngine.dir\build.make CMakeFiles/MyRPGEngine.dir/src/ResourceManager.cpp.s
-.PHONY : src/ResourceManager.cpp.s
+src/Managers.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\MyRPGEngine.dir\build.make CMakeFiles/MyRPGEngine.dir/src/Managers.cpp.s
+.PHONY : src/Managers.cpp.s
 
 src/Systems.obj: src/Systems.cpp.obj
 .PHONY : src/Systems.obj
@@ -386,21 +338,15 @@ help:
 	@echo ... src/DeltaTime.obj
 	@echo ... src/DeltaTime.i
 	@echo ... src/DeltaTime.s
-	@echo ... src/Effects.obj
-	@echo ... src/Effects.i
-	@echo ... src/Effects.s
 	@echo ... src/Entity.obj
 	@echo ... src/Entity.i
 	@echo ... src/Entity.s
 	@echo ... src/Events.obj
 	@echo ... src/Events.i
 	@echo ... src/Events.s
-	@echo ... src/Render.obj
-	@echo ... src/Render.i
-	@echo ... src/Render.s
-	@echo ... src/ResourceManager.obj
-	@echo ... src/ResourceManager.i
-	@echo ... src/ResourceManager.s
+	@echo ... src/Managers.obj
+	@echo ... src/Managers.i
+	@echo ... src/Managers.s
 	@echo ... src/Systems.obj
 	@echo ... src/Systems.i
 	@echo ... src/Systems.s

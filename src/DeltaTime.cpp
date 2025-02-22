@@ -7,13 +7,13 @@ DeltaTime& DeltaTime::getInstance() {
 }
 
 float DeltaTime::getDeltaTime() {
-    static std::chrono::high_resolution_clock::time_point lastFrame = std::chrono::high_resolution_clock::now();
-    
-    auto now = std::chrono::high_resolution_clock::now();
-    float deltaTime = std::chrono::duration<float>(now - lastFrame).count();
-    lastFrame = now;  
-
     return deltaTime;  
 }
 
+void DeltaTime::update() {
+    std::chrono::high_resolution_clock::time_point now = std::chrono::high_resolution_clock::now();
+    deltaTime = std::chrono::duration<float>(now - lastFrame).count();
+    lastFrame = now;  
+}
 
+DeltaTime& dt = DeltaTime::getInstance();

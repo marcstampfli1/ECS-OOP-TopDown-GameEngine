@@ -107,7 +107,6 @@ CMakeFiles/MyRPGEngine.dir/src/Systems.cpp.obj: \
  C:/msys64/ucrt64/include/c++/13.2.0/bits/std_abs.h \
  C:/msys64/ucrt64/include/c++/13.2.0/bits/move_only_function.h \
  C:/msys64/ucrt64/include/c++/13.2.0/bits/mofunc_impl.h \
- C:\Users\ur2ba\OneDrive\Desktop\ECS-OOP-TopDown-GameEngine\src\headers/Effects.h \
  C:/msys64/ucrt64/include/c++/13.2.0/memory \
  C:/msys64/ucrt64/include/c++/13.2.0/bits/stl_raw_storage_iter.h \
  C:/msys64/ucrt64/include/c++/13.2.0/bits/align.h \
@@ -194,7 +193,7 @@ CMakeFiles/MyRPGEngine.dir/src/Systems.cpp.obj: \
  C:/msys64/ucrt64/include/c++/13.2.0/bits/ranges_algobase.h \
  C:/msys64/ucrt64/include/c++/13.2.0/pstl/glue_memory_defs.h \
  C:/msys64/ucrt64/include/c++/13.2.0/pstl/execution_defs.h \
- C:\Users\ur2ba\OneDrive\Desktop\ECS-OOP-TopDown-GameEngine\src\headers/ResourceManager.h \
+ C:\Users\ur2ba\OneDrive\Desktop\ECS-OOP-TopDown-GameEngine\src\headers/Managers.h \
  C:/Users/ur2ba/OneDrive/Desktop/ECS-OOP-TopDown-GameEngine/graphicslib/src/Shader.h \
  C:/Users/ur2ba/OneDrive/Desktop/ECS-OOP-TopDown-GameEngine/graphicslib/libraries/include/glad/glad.h \
  C:/Users/ur2ba/OneDrive/Desktop/ECS-OOP-TopDown-GameEngine/graphicslib/libraries/include/glad/khrplatform.h \
