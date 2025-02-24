@@ -128,6 +128,19 @@ MyRPGEngine/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\MyRPGEngine.dir\build.make CMakeFiles/MyRPGEngine.dir/build
 .PHONY : MyRPGEngine/fast
 
+#=============================================================================
+# Target rules for targets named MyRPGGame
+
+# Build rule for target.
+MyRPGGame: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 MyRPGGame
+.PHONY : MyRPGGame
+
+# fast build rule for target.
+MyRPGGame/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\MyRPGGame.dir\build.make CMakeFiles/MyRPGGame.dir/build
+.PHONY : MyRPGGame/fast
+
 src/Behaviours.obj: src/Behaviours.cpp.obj
 .PHONY : src/Behaviours.obj
 
@@ -152,30 +165,6 @@ src/Behaviours.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\MyRPGEngine.dir\build.make CMakeFiles/MyRPGEngine.dir/src/Behaviours.cpp.s
 .PHONY : src/Behaviours.cpp.s
 
-src/Component.obj: src/Component.cpp.obj
-.PHONY : src/Component.obj
-
-# target to build an object file
-src/Component.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\MyRPGEngine.dir\build.make CMakeFiles/MyRPGEngine.dir/src/Component.cpp.obj
-.PHONY : src/Component.cpp.obj
-
-src/Component.i: src/Component.cpp.i
-.PHONY : src/Component.i
-
-# target to preprocess a source file
-src/Component.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\MyRPGEngine.dir\build.make CMakeFiles/MyRPGEngine.dir/src/Component.cpp.i
-.PHONY : src/Component.cpp.i
-
-src/Component.s: src/Component.cpp.s
-.PHONY : src/Component.s
-
-# target to generate assembly for a file
-src/Component.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\MyRPGEngine.dir\build.make CMakeFiles/MyRPGEngine.dir/src/Component.cpp.s
-.PHONY : src/Component.cpp.s
-
 src/DeltaTime.obj: src/DeltaTime.cpp.obj
 .PHONY : src/DeltaTime.obj
 
@@ -199,54 +188,6 @@ src/DeltaTime.s: src/DeltaTime.cpp.s
 src/DeltaTime.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\MyRPGEngine.dir\build.make CMakeFiles/MyRPGEngine.dir/src/DeltaTime.cpp.s
 .PHONY : src/DeltaTime.cpp.s
-
-src/Entity.obj: src/Entity.cpp.obj
-.PHONY : src/Entity.obj
-
-# target to build an object file
-src/Entity.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\MyRPGEngine.dir\build.make CMakeFiles/MyRPGEngine.dir/src/Entity.cpp.obj
-.PHONY : src/Entity.cpp.obj
-
-src/Entity.i: src/Entity.cpp.i
-.PHONY : src/Entity.i
-
-# target to preprocess a source file
-src/Entity.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\MyRPGEngine.dir\build.make CMakeFiles/MyRPGEngine.dir/src/Entity.cpp.i
-.PHONY : src/Entity.cpp.i
-
-src/Entity.s: src/Entity.cpp.s
-.PHONY : src/Entity.s
-
-# target to generate assembly for a file
-src/Entity.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\MyRPGEngine.dir\build.make CMakeFiles/MyRPGEngine.dir/src/Entity.cpp.s
-.PHONY : src/Entity.cpp.s
-
-src/Events.obj: src/Events.cpp.obj
-.PHONY : src/Events.obj
-
-# target to build an object file
-src/Events.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\MyRPGEngine.dir\build.make CMakeFiles/MyRPGEngine.dir/src/Events.cpp.obj
-.PHONY : src/Events.cpp.obj
-
-src/Events.i: src/Events.cpp.i
-.PHONY : src/Events.i
-
-# target to preprocess a source file
-src/Events.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\MyRPGEngine.dir\build.make CMakeFiles/MyRPGEngine.dir/src/Events.cpp.i
-.PHONY : src/Events.cpp.i
-
-src/Events.s: src/Events.cpp.s
-.PHONY : src/Events.s
-
-# target to generate assembly for a file
-src/Events.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\MyRPGEngine.dir\build.make CMakeFiles/MyRPGEngine.dir/src/Events.cpp.s
-.PHONY : src/Events.cpp.s
 
 src/Managers.obj: src/Managers.cpp.obj
 .PHONY : src/Managers.obj
@@ -302,6 +243,7 @@ src/main.obj: src/main.cpp.obj
 # target to build an object file
 src/main.cpp.obj:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\MyRPGEngine.dir\build.make CMakeFiles/MyRPGEngine.dir/src/main.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\MyRPGGame.dir\build.make CMakeFiles/MyRPGGame.dir/src/main.cpp.obj
 .PHONY : src/main.cpp.obj
 
 src/main.i: src/main.cpp.i
@@ -310,6 +252,7 @@ src/main.i: src/main.cpp.i
 # target to preprocess a source file
 src/main.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\MyRPGEngine.dir\build.make CMakeFiles/MyRPGEngine.dir/src/main.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\MyRPGGame.dir\build.make CMakeFiles/MyRPGGame.dir/src/main.cpp.i
 .PHONY : src/main.cpp.i
 
 src/main.s: src/main.cpp.s
@@ -318,6 +261,7 @@ src/main.s: src/main.cpp.s
 # target to generate assembly for a file
 src/main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\MyRPGEngine.dir\build.make CMakeFiles/MyRPGEngine.dir/src/main.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\MyRPGGame.dir\build.make CMakeFiles/MyRPGGame.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
 # Help Target
@@ -329,21 +273,13 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... MyRPGEngine
+	@echo ... MyRPGGame
 	@echo ... src/Behaviours.obj
 	@echo ... src/Behaviours.i
 	@echo ... src/Behaviours.s
-	@echo ... src/Component.obj
-	@echo ... src/Component.i
-	@echo ... src/Component.s
 	@echo ... src/DeltaTime.obj
 	@echo ... src/DeltaTime.i
 	@echo ... src/DeltaTime.s
-	@echo ... src/Entity.obj
-	@echo ... src/Entity.i
-	@echo ... src/Entity.s
-	@echo ... src/Events.obj
-	@echo ... src/Events.i
-	@echo ... src/Events.s
 	@echo ... src/Managers.obj
 	@echo ... src/Managers.i
 	@echo ... src/Managers.s

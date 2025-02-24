@@ -3,11 +3,6 @@
 #include <unordered_set>
 #include <string>
 
-#include "../../graphicslib/src/Shader.h"
-#include "../../graphicslib/src/Window.h"
-#include "../../graphicslib/src/Mesh.h"
-#include "../../graphicslib/src/Texture.h"
-
 #include "Entity.h"
 #include "Components.h"
 #include "Behaviours.h"
@@ -19,11 +14,58 @@
 #include <algorithm>
 #include <typeindex>
 
+#include "../../soloud/include/soloud.h"
+#include "../../soloud/include/soloud_wav.h"
+
+/*#include "../../graphicslib/src/Shader.h"
+#include "../../graphicslib/src/Window.h"
+#include "../../graphicslib/src/Texture.h"
+#include "../../graphicslib/src/Renderer.h"*/
+
+using EntityType = std::uint32_t;
+
+/*class RenderManager : Renderer{
+public:
+
+    void testFunction();
+    RenderManager(Window* window) : Renderer(window) {}
+};*/
+
+class AudioManager {
+public:
+
+    void initialize();
+
+    void loadSound(const std::string& name, const std::string& filePath);
+    
+    SoLoud::handle playSound(const std::string& name, float volume = 1.0f);
+
+    void stopSound(SoLoud::handle activeSound);
+
+    void stopAll();
+    void setVolume(SoLoud::handle activeSound, float volume);
+    bool isPlaying(SoLoud::handle activeSound);
+
+    void pauseSound(SoLoud::handle handle);
+    void resumeSound(SoLoud::handle handle);
+    bool isPaused(SoLoud::handle handle);
+
+    std::unordered_map<std::string, std::unique_ptr<SoLoud::Wav>>& getAllSounds();
+
+    ~AudioManager() {
+        audioEngine.deinit();
+    }
+private:
+    SoLoud::Soloud audioEngine;
+    std::unordered_map<std::string, std::unique_ptr<SoLoud::Wav>> sounds;
+};
+
 class EventBus {
 public:
 
     template<typename EventTemplate>
     void subscribe(std::function<void(const EventTemplate&)> handler) {
+        static_assert(std::is_base_of<Event, EventTemplate>::value, "EventType must be derived from Event");
         // Use the event type's runtime type information as a key.
         auto& handlers = subscribers[std::type_index(typeid(EventTemplate))];
         // Wrap the handler so that it accepts a base Event reference.
@@ -35,6 +77,8 @@ public:
 
     template<typename EventTemplate>
     void publish(const EventTemplate& event) const {
+        static_assert(std::is_base_of<Event, EventTemplate>::value, "EventType must be derived from Event");
+
         auto it = subscribers.find(std::type_index(typeid(EventTemplate)));
         if (it != subscribers.end()) {
             // Call each subscribed handler with the event.
@@ -64,33 +108,25 @@ public:
 
     Position* getPosition(Entity entity);
     Velocity* getVelocity(Entity entity);
-    Health* getHealth(Entity entity) ;
 
     void setPosition(Entity entity, const Position& position);
     void setVelocity(Entity entity, const Velocity& velocity);
-    void setHealth(Entity entity, const Health& health);
 
     Entity createEntity();
 
-    void destroyEntity(Entity entity);
+    virtual void destroyEntity(Entity entity);
     
     bool entityExists(Entity entity) const;
 
-    const std::unordered_set<Entity> getEntitiesByType(EntityType type) const;
+    const std::unordered_set<Entity>& getEntitiesByType(EntityType type) const;
 
-    const std::unordered_set<Entity> getAllEntities() const;
+    const std::unordered_set<Entity>& getAllEntities() const;
 
     void setPlayer(Entity entity);
 
     Entity getPlayer();
 
-
     EntityManager() = default;
-
-
-
-
-
 
 protected:
 
@@ -101,7 +137,6 @@ protected:
     Entity player;
     std::unordered_map<Entity, Position> positionComponents;
     std::unordered_map<Entity, Velocity> velocityComponents;
-    std::unordered_map<Entity, Health> healthComponents;
     std::unordered_map<Entity, Size> sizeComponents;
     std::unordered_map<Entity, std::shared_ptr<EntityBehaviour>> behaviours;
     std::unordered_map<Entity, EntityType> typeComponents;
@@ -110,45 +145,32 @@ protected:
     Entity nextEntityID = 0;
 };
 
-class Renderer {
+class SystemManager {
 public:
-
-    void render();
-
-    void initialize(std::shared_ptr<EntityManager> em);
-
-    Window& getWindow();
-
-    Renderer() = default;
-
+    void update(float dt);
+    void initialize(std::shared_ptr<EntityManager> em, std::shared_ptr<EventBus> eb);
+    SystemManager() = default; 
+    
 protected:
+    MovementSystem movementSystem;
+    StatusSystem statusSystem;
+    CollisionSystem collisionSystem;
 
-    Window window;
-    
-    std::unordered_map<Entity, Shader*> shaderComponents;
-    std::unordered_map<Entity, Texture*> textureComponents;
-    std::unordered_map<Entity, std::unique_ptr<Mesh>> meshComponents;
-
-    std::unordered_map<std::string, std::shared_ptr<Texture>> textures;
-    std::unordered_map<std::string, std::shared_ptr<Shader>> shaders;
-    std::vector<Entity> sortedDrawEntities;
-
-    void updateEntityRectangles();
-    void sortEntitiesByYValue();
-    
-    std::shared_ptr<EntityManager> entityManager;
 };
 
-class SystemManager {
-    public:
-        void update(float dt);
-        void initialize(std::shared_ptr<EntityManager> em, std::shared_ptr<EventBus> eb);
+class EntityTypeRegistry {
+public:
+    static EntityType registerType(const std::string& typeName) {
+        static EntityType nextTypeID = 0; 
+        return typeMap[typeName] = nextTypeID++;
+    }
+
+    static const EntityType* getType(const std::string& typeName) {
+        auto it = typeMap.find(typeName);
+        return (it != typeMap.end()) ? &it->second : nullptr;
+    }
+
+private:
+    static inline std::unordered_map<std::string, EntityType> typeMap;
+};
         
-        DamageSystem damageSystem;
-        MovementSystem movementSystem;
-        StatusSystem statusSystem;
-        CollisionSystem collisionSystem;
-    
-        SystemManager() = default; 
-    
-    };

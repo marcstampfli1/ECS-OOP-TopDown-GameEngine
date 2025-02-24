@@ -8,7 +8,10 @@
 #include <algorithm>
 #include <typeinfo>
 
-
+void System::initialize(std::shared_ptr<EntityManager> em, std::shared_ptr<EventBus> eb) {
+    entityManager = em;
+    eventBus = eb;
+}
 
 void MovementSystem::update(float dt) {
     for (auto& entity : entityManager->getAllEntities()) {
@@ -19,44 +22,19 @@ void MovementSystem::update(float dt) {
     }
 }
 
-void MovementSystem::initialize(std::shared_ptr<EntityManager> em) {
-    entityManager = em;
-}
-
-void DamageSystem::initialize(std::shared_ptr<EntityManager> em, std::shared_ptr<EventBus> eb) {
-    entityManager = em;
-    eventBus = eb;
-    eventBus->subscribe<DamageEvent>([this](const DamageEvent& damageEvent) {
-        this->applyDamage(damageEvent);
-    });
-}
-
-void DamageSystem::applyDamage(const DamageEvent& damageEvent) {
-    Health* entityHealth = entityManager->getHealth(damageEvent.target);
-    if (!entityHealth) return;
-
-    entityHealth->currentHealth -= damageEvent.damageAmount;
-    
-}
-
-void DamageSystem::update(float dt) {
-    return;
-}
-
 void StatusSystem::update(float dt) {
-
     for (auto it = activeStatuses.begin(); it != activeStatuses.end();) {
         auto& status = *it;
         (*status).timeSinceLastTick += dt;
 
         // Apply effect if enough time has passed
-        if ((*status).timeSinceLastTick >= (*status).interval) {
-            eventBus->publish(DamageEvent((*status).source, (*status).target, 10.0f, EventType::Executable));
+        if (status->timeSinceLastTick >= status->interval || status->timeSinceLastTick == 0.0f) {
+            eventBus->publish(*status->event);
             (*status).timeSinceLastTick = 0; // Reset timer
         }
 
         // Remove effect if expired
-        if (!(*status).condition()) {
+        if (!status->condition()) {
             it = activeStatuses.erase(it);
         } else {
             ++it;
@@ -64,7 +42,7 @@ void StatusSystem::update(float dt) {
     }
 }
 
-void StatusSystem::initialize(std::shared_ptr<EventBus> eb) {
+void StatusSystem::initialize(std::shared_ptr<EntityManager> em, std::shared_ptr<EventBus> eb) {
     eventBus = eb;
     eventBus->subscribe<StatusAppliedEvent>([this](const StatusAppliedEvent& statusEvent) {
         this->addStatus(std::make_shared<StatusAppliedEvent>(statusEvent));
@@ -87,11 +65,9 @@ void StatusSystem::removeStatus(std::shared_ptr<StatusAppliedEvent> status) {
     activeStatuses.erase(it, activeStatuses.end());
 }
 
-void CollisionSystem::initialize(std::shared_ptr<EntityManager> em, std::shared_ptr<EventBus> eb) {
-    entityManager = em;
-    eventBus = eb;
+const std::vector<std::shared_ptr<StatusAppliedEvent>>& StatusSystem::getActiveStatuses() const{
+    return activeStatuses;
 }
-
 
 bool CollisionSystem::checkAABBCollision(Entity entity1, Entity entity2) {
 
@@ -110,7 +86,6 @@ bool CollisionSystem::checkAABBCollision(Entity entity1, Entity entity2) {
 }
 
 bool CollisionSystem::isColliding(Entity firstEntity, Entity secondEntity) const {
-    //stores iterator of firstEntity
     auto iterator = currentCollisions.find(firstEntity);
 
     if (iterator != currentCollisions.end()) {
@@ -119,9 +94,13 @@ bool CollisionSystem::isColliding(Entity firstEntity, Entity secondEntity) const
     return false;
 }
 
+const std::unordered_map<Entity, std::unordered_set<Entity>>& CollisionSystem::getCollisions() {
+    return currentCollisions;
+}
+
 void CollisionSystem::update(float dt) {
     // Temporary map to hold new collision states
-    std::unordered_map<Entity, std::unordered_set<Entity>> newCollisions;
+    std::unordered_map<Entity, std::unordered_set<Entity>> allCollisionsNew;
 
     const std::unordered_set<Entity> entities = entityManager->getAllEntities();
 
@@ -131,28 +110,28 @@ void CollisionSystem::update(float dt) {
             // Check both entities for size & pos
             
             if (checkAABBCollision(*iterator1, *iterator2)) {
-                newCollisions[*iterator1].insert(*iterator2);
-                newCollisions[*iterator2].insert(*iterator1);
+                allCollisionsNew[*iterator1].insert(*iterator2);
+                allCollisionsNew[*iterator2].insert(*iterator1);
             }
         }
     }
 
-    for (auto& [entity, newSet] : newCollisions) {
+    for (auto& [entity, newSet] : allCollisionsNew) {
         for (Entity collider : newSet) {
-            if (currentCollisions[entity].find(collider) == currentCollisions[entity].end()) {
-                eventBus->publish<StatusAppliedEvent>(StatusAppliedEvent(entity, collider, EventType::Touching, 1.0f, [this, entity, collider]() -> bool { return isColliding(entity, collider); }));
+            auto iterator = currentCollisions.find(entity);
+            if (iterator != currentCollisions.end() && iterator->second.find(collider) != iterator->second.end()) {
+                newCollisions[entity].insert(collider);
             }
         }
     }
 
     for (auto& [entity, oldSet] : currentCollisions) {
         for (Entity collider : oldSet) {
-            if (newCollisions[entity].find(collider) == newCollisions[entity].end()) {
-                //publish event
+            if (allCollisionsNew.count(entity) == 0 || allCollisionsNew[entity].count(collider) == 0) {
+                endedCollisions[entity].insert(collider);
             }
         }
     }
 
-    currentCollisions = std::move(newCollisions);
+    currentCollisions = std::move(allCollisionsNew);
 }
-

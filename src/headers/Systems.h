@@ -11,43 +11,30 @@
 class EntityManager;
 class EventBus;
 
-class MovementSystem {
+class System {
 public:
-    void initialize(std::shared_ptr<EntityManager> entityManager);
-    void update(float dt);
-    ~MovementSystem() = default;
-
+    virtual void update(float dt) = 0;
+    virtual ~System() = default;
+    virtual void initialize(std::shared_ptr<EntityManager> em, std::shared_ptr<EventBus> eb); 
 protected:
     std::shared_ptr<EntityManager> entityManager = nullptr;
-};
-
-class DamageSystem {
-public:
-
-    void initialize(std::shared_ptr<EntityManager> entityManager, std::shared_ptr<EventBus> eventBus);    
-    void update(float dt);
-
-    void initialize();
-    void applyDamage(const DamageEvent& damageEvent);
-
-    ~DamageSystem() = default;
-    
-protected:
-
     std::shared_ptr<EventBus> eventBus = nullptr;
-    std::shared_ptr<EntityManager> entityManager = nullptr;
-
 };
 
-class StatusSystem {
+class MovementSystem : public System {
 public:
-    void update(float dt);
+    void update(float dt) override;
+    ~MovementSystem() = default;
+};
 
+class StatusSystem : public System {
+public:
+    void update(float dt) override;
+    void initialize(std::shared_ptr<EntityManager> em, std::shared_ptr<EventBus> eb) override;
+    const std::vector<std::shared_ptr<StatusAppliedEvent>>& getActiveStatuses() const;
     ~StatusSystem() = default;
-    void initialize(std::shared_ptr<EventBus> eventBus);
 
 protected: 
-    std::shared_ptr<EventBus> eventBus = nullptr;
 
     void addStatus(std::shared_ptr<StatusAppliedEvent> status);
     void removeStatus(std::shared_ptr<StatusAppliedEvent> status);
@@ -57,19 +44,18 @@ protected:
 };
 
 
-class CollisionSystem {
+class CollisionSystem : public System {
 public:
     // Called every frame to check for collisions between entities.
-    void update(float dt);
-    void initialize(std::shared_ptr<EntityManager> entityManager, std::shared_ptr<EventBus> eventBus);
+    void update(float dt) override;
     
     bool isColliding(Entity a, Entity b) const;
+    const std::unordered_map<Entity, std::unordered_set<Entity>>& getCollisions();
 
 protected:
     // Basic AABB collision check between two entities.
     bool checkAABBCollision(Entity entity1, Entity entity2);
     std::unordered_map<Entity, std::unordered_set<Entity>> currentCollisions;
-
-    std::shared_ptr<EventBus> eventBus = nullptr;
-    std::shared_ptr<EntityManager> entityManager = nullptr;
+    std::unordered_map<Entity, std::unordered_set<Entity>> newCollisions;
+    std::unordered_map<Entity, std::unordered_set<Entity>> endedCollisions;
 };
